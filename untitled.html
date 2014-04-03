@@ -1,0 +1,87 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+     <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+     <script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
+     <script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+    <!-- 802560509771616-->
+	<title>Untitled Document</title>
+</head>
+
+<body>
+	<div id="fb-root"></div>
+    <p>
+      <script>
+		// Additional JS functions here
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '802560509771616', // App ID
+			 	status     : true, // check login status
+			  	cookie     : true, // enable cookies to allow the server to access the session
+			  	xfbml      : true  // parse XFBML
+			});
+
+
+			FB.getLoginStatus(function(response) {
+				console.log("Response "+ response);
+				console.log("getloginstatus");
+				if (response.status === 'connected') {
+					// connected
+					testAPI();
+				} else if (response.status === 'not_authorized') {
+					// not_authorized
+					login();
+				} else {
+					// not_logged_in
+					login();
+				}
+			});
+		};
+
+
+/*  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+     console.log("Lodaed SDK");
+   }(document));*/
+  
+function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+        console.log("Good to see you, " + response.name + ".");
+    });
+}
+
+function login() {
+    FB.login(function(response) {
+        if (response.authResponse) {
+            // connected
+            testAPI();
+        } else {
+            // cancelled
+        }
+    });
+}
+
+
+
+
+
+      </script>
+      <a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="red"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png" /></a>  </p>
+    <p>
+      <!-- Please call pinit.js only once per page -->
+      <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
+      
+      <a href="javascript:(function(){window.twttr=window.twttr||{};var D=550,A=450,C=screen.height,B=screen.width,H=Math.round((B/2)-(D/2)),G=0,F=document,E;if(C>A){G=Math.round((C/2)-(A/2))}window.twttr.shareWin=window.open('http://twitter.com/share?url=http://www.nerdery.com&text=cool&via@dan_krueger','','left='+H+',top='+G+',width='+D+',height='+A+',
+personalbar=0,toolbar=0,scrollbars=1,resizable=1');E=F.createElement('script');E.src='http://platform.twitter.com/widgets.js';F.getElementsByTagName('head')[0].appendChild(E)}());
+"><img src="twitter-logo.png" width="38" height="39" border="0"></a></p>
+    <p><img src="fb_share_logo.jpg" width="50" height="50"></p>
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div>
+</div>
+</body>
+</html>
