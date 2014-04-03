@@ -1,30 +1,24 @@
 // JavaScript Document
-
-$(document).ready(function() {
-  $.ajaxSetup({ cache: true });
-  $.getScript('//connect.facebook.net/en_US/all.js', function(){
-   	FB.init({
-      	appId: '802560509771616'
-    });   
-	console.log("Lodaed SDK");  
-    $('#loginbutton,#feedbutton').removeAttr('disabled');
-    FB.getLoginStatus(updateStatusCallback);
-  });
+console.log("Facebook JS ");
+FB.init({
+	appId      : '802560509771616', // App ID
+	status     : true, // check login status
+	cookie     : true, // enable cookies to allow the server to access the session
+	xfbml      : true  // parse XFBML
 });
 
-/*FB.getLoginStatus(function(response) {
-	console.log("Response");
+
+FB.getLoginStatus(function(response) {
+	console.log("Response "+ response);
 	console.log("getloginstatus");
 	if (response.status === 'connected') {
 		// connected
-		console.log('connected')
+		testAPI();
 	} else if (response.status === 'not_authorized') {
 		// not_authorized
-		console.log('not_authorized')
 		login();
 	} else {
 		// not_logged_in
-		console.log('not_logged_in')
 		login();
 	}
 });
@@ -38,6 +32,7 @@ function testAPI() {
 }
 
 function login() {
+	console.log('login');
     FB.login(function(response) {
         if (response.authResponse) {
             // connected
@@ -61,6 +56,4 @@ FB.ui({
      } else {
        alert('Post was not published.');
      }
-	});
-
-*/
+});

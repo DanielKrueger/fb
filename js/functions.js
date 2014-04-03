@@ -1,10 +1,7 @@
 $( document ).ready(function() {
-	$( "#share" ).click(function( event ) {
-		fbShare();
-		event.preventDefault();
-	});
+	console.log("ready");
 });	
 
 function fbShare(){
-	console.log("in");
+	console.log("fbShare");
 }
