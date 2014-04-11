@@ -13,22 +13,29 @@
 <script>
 window.fbAsyncInit = function() {
     FB.init({
-      appId   : '802560509771616',
-      status  : true,
-      cookie  : true, 
-      oauth: true,
-      xfbml   : true
+      appId   : '',
+      status  : false,
+      cookie  : false, 
+      oauth: false,
+      xfbml   : false
     });
 
-    FB.getLoginStatus(function(response) {
-        console.log( response );
-       /* if ((response.status)&&(response.status=='connected')) {
-            loadStreamInto ( $("#FBmessages") );
-        } else {
-
-        }*/
-    });
+    FB.ui({
+		method: 'feed',
+		link: 'http://kruegerrobb.net/fb/untitled.html#7',
+		picture: 'http://fbrell.com/f8.jpg',
+		name: 'Facebook Sample Feed',
+		caption: 'My Favorite Property',
+		description: 'Share this data with someone.'
+	}, function(response){
+		
+		 if (response && response.post_id) {
+		   console.log('Post was published.');
+		 } else {
+		   console.log('Post was not published.');
+		 }
+	});
 };
 </script>
-Hello World
+
 </div>

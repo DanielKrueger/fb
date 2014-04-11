@@ -8,3 +8,10 @@
   ga('create', 'UA-48098652-1', 'kruegerrobb.net');
   ga('send', 'pageview');
 
+function trackClick( e, c, l){
+	console.log('trackClick');
+	console.log(e);
+	console.log(c);
+	console.log(l);
+	ga('send', 'event', e, c, l);
+}

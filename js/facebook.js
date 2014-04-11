@@ -7,19 +7,19 @@ FB.init({
 	xfbml      : true  // parse XFBML
 });
 
-
+/*
 FB.getLoginStatus(function(response) {
 	console.log("Response "+ response);
 	console.log("getloginstatus");
 	if (response.status === 'connected') {
 		// connected
-		testAPI();
+		//testAPI();
 	} else if (response.status === 'not_authorized') {
 		// not_authorized
-		login();
+		//login();
 	} else {
 		// not_logged_in
-		login();
+		//login();
 	}
 });
 
@@ -42,18 +42,21 @@ function login() {
     });
 }
 
-FB.ui({
-    method: 'feed',
-    link: 'https://developers.facebook.com/docs/reference/dialogs/',
-    picture: 'http://fbrell.com/f8.jpg',
-    name: 'Facebook Dialogs',
-    caption: 'Reference Documentation',
-    description: 'Using Dialogs to interact with people.'
-}, function(response){
-	
-	 if (response && response.post_id) {
-       alert('Post was published.');
-     } else {
-       alert('Post was not published.');
-     }
-});
+*/
+function fbShare(){
+	FB.ui({
+		method: 'feed',
+		link: 'http://kruegerrobb.net/fb/untitled.html#7',
+		picture: 'http://fbrell.com/f8.jpg',
+		name: 'Facebook Sample Feed',
+		caption: 'My Favorite Property',
+		description: 'Share this data with someone.'
+	}, function(response){
+		
+		 if (response && response.post_id) {
+		   console.log('Post was published.');
+		 } else {
+		   console.log('Post was not published.');
+		 }
+	});
+}
